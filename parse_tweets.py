@@ -40,6 +40,6 @@ print "\n\nHere is the breakdown of retweets since %s:\n\n" % last_month.date()
 for person in people:
     print "%s: @%s" % (retweet_people[person]['count'], person)
     for tweet in retweet_people[person]['tweets']:
-        print "\t\t", tweet['text']
+        print "\t\t", tweet['text'].encode('utf8')
         print
 
