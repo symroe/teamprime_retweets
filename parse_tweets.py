@@ -19,7 +19,7 @@ retweet_people = defaultdict(mk_user_dict)
 
 for tweet_day in glob.glob('tweets/*'):
     folder_date = tweet_day[7:]
-    if datetime.datetime.strptime(folder_date, "%Y-%m-%d") < last_month:
+    if datetime.datetime.strptime(folder_date, "%Y-%m-%d") >  last_month:
         for tweet in glob.glob('tweets/%s/*' % folder_date):
             for retweet in glob.glob('%s/retweets/*' % tweet):
                 tweet_json = json.loads(open(retweet, 'r').read())
