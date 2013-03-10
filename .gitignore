@@ -1,0 +1,5 @@
+*.pyc
+/tweets
+.Python
+env/
+settings.py
