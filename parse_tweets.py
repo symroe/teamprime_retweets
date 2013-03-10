@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import glob
 from random import choice
 import json
