@@ -1,0 +1,30 @@
+{% block subject %}This month’s retweets{% endblock %}
+{% block html %}
+  <p>Hi Thayer,</p>
+
+  <p>This month's winner is: {{ winner }}</p>
+  
+  <p>Also, here are the most retweeted tweets this month:</p>
+  <table>
+      <thead>
+          <th>
+              <td>Retweets</td>
+              <td>Tweet</td>
+          </th>
+      </thead>
+  {% for tweet in top_retweets %}
+      <tr>
+          <td>{{ tweet.retweet_count}}</td>
+          <td>{{ tweet.text}}</td>
+      </tr>
+  {% endfor %}
+  </table>
+
+  <p>Here are all the people who retweeted you this month:</p>
+  <ul>
+      {% for name in screen_names %}
+          <li>{{ name }}</li>
+      {% endfor %}
+  </ul>
+
+{% endblock %}
