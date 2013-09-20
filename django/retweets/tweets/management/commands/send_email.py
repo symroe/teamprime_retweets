@@ -12,7 +12,7 @@ class Command(BaseCommand):
     
     def handle(self, **options):
         retweets = ReTweetsSince().last_month_retweets()
-        screen_names = list(retweets.values_list('screen_name', flat=True))
+        screen_names = set(retweets.values_list('screen_name', flat=True))
         
         top_retweets = ReTweetsSince().last_month_tweets().exclude(retweet=None)
         top_retweets = top_retweets.order_by('-retweet_count')[:10]
